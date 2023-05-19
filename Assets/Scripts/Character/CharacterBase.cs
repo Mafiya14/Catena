@@ -4,10 +4,14 @@ public abstract class CharacterBase : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] protected float distanceThreshold = 0.1f;
+    [SerializeField] private float _maximumTimeWithoutColliders;
 
     public WaypointPath Path { get; private set; }
     public Transform CurrentWaypoint { get; private set; }
     public int CurrentWaypointId { get; private set; } = -1;
+
+    private bool _startCountdown;
+    private float _time = 0;
 
     public void Init()
     {
@@ -18,6 +22,11 @@ public abstract class CharacterBase : MonoBehaviour
     private void Update()
     {
         Move();
+
+        if (_startCountdown)
+        {
+            PerformCountdown();
+        }
     }
 
     public virtual void Move()
@@ -42,7 +51,30 @@ public abstract class CharacterBase : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
+            _startCountdown = false;
+            _time = 0f;
             Debug.Log("Entering new pipe");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            _startCountdown = true;
+            _time = 0f;
+            Debug.Log("Exiting pipe");
+        }
+    }
+
+    private void PerformCountdown()
+    {
+        _time += Time.deltaTime;
+        if (_time > _maximumTimeWithoutColliders)
+        {
+            _time = 0f;
+            _startCountdown = false;
+            Debug.Log("fail");
         }
     }
 }

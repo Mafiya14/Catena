@@ -526,14 +526,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918953150}
-  m_LocalRotation: {x: -0.29131997, y: 0.6443079, z: -0.29131997, w: -0.6443079}
-  m_LocalPosition: {x: 15.5, y: 33, z: 0}
+  m_LocalRotation: {x: -0.3476704, y: 0.61573154, z: -0.3476704, w: -0.61573154}
+  m_LocalPosition: {x: 13.6, y: 38.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 48.66, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: 58.902, y: 270, z: 0}
 --- !u!1001 &923969328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -730,6 +730,10 @@ PrefabInstance:
     - target: {fileID: 7443853656524277217, guid: 24c4e47c86fc9af4e803c64f722b9e52, type: 3}
       propertyPath: m_Name
       value: pipe 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443853656524277217, guid: 24c4e47c86fc9af4e803c64f722b9e52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7783963820605513563, guid: 24c4e47c86fc9af4e803c64f722b9e52, type: 3}
       propertyPath: m_RootOrder
@@ -1059,7 +1063,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2031437684
 MeshRenderer:
@@ -1155,6 +1159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  distanceThreshold: 0.1
+  _maximumTimeWithoutColliders: 0.25
 --- !u!4 &543450652300288332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2359169473749537111, guid: caa64c8507f18db40bcfe899f5b5535e, type: 3}
