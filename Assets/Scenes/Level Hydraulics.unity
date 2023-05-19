@@ -185,6 +185,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7783963820605513563, guid: 24c4e47c86fc9af4e803c64f722b9e52, type: 3}
   m_PrefabInstance: {fileID: 296356031}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &363186840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363186842}
+  - component: {fileID: 363186841}
+  m_Layer: 0
+  m_Name: LevelStartup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &363186841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363186840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2875661108d0174f8d31fa9eefaf269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterPrefab: {fileID: 2031437688}
+  _spawnPoint: {fileID: 1417770907}
+  _waypointPath: {fileID: 1529299766}
+--- !u!4 &363186842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363186840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497052281
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,14 +526,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918953150}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.29131997, y: 0.6443079, z: -0.29131997, w: -0.6443079}
+  m_LocalPosition: {x: 15.5, y: 33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 48.66, y: 270, z: 0}
 --- !u!1001 &923969328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -797,6 +844,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7783963820605513563, guid: 24c4e47c86fc9af4e803c64f722b9e52, type: 3}
   m_PrefabInstance: {fileID: 1399450402}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1417770906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1417770907}
+  m_Layer: 0
+  m_Name: Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1417770907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417770906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: 18, z: -12.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1963479438}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529299764
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +1023,7 @@ Transform:
   - {fileID: 927741916}
   - {fileID: 1690620571}
   - {fileID: 1529299765}
+  - {fileID: 1417770907}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -962,13 +1041,13 @@ GameObject:
   - component: {fileID: 2031437683}
   - component: {fileID: 2031437687}
   - component: {fileID: 2031437688}
-  m_Layer: 0
-  m_Name: Sphere
+  m_Layer: 7
+  m_Name: Water Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2031437683
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1075,7 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d07f95b5029fcd42a54a066f22d3b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 0
+  moveSpeed: 5
 --- !u!4 &543450652300288332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2359169473749537111, guid: caa64c8507f18db40bcfe899f5b5535e, type: 3}
