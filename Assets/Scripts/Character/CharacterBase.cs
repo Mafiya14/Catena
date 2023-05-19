@@ -37,4 +37,12 @@ public abstract class CharacterBase : MonoBehaviour
         CurrentWaypoint = Path.GetNextWaypoint(CurrentWaypointId);
         CurrentWaypointId++;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            Debug.Log("Entering new pipe");
+        }
+    }
 }
