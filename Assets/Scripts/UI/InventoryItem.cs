@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private GameObject _elementPrefab;
+    [SerializeField] private Element _elementPrefab;
     [SerializeField] private GameObject _elementParent;
 
     private RectTransform rectTransform;
@@ -24,34 +24,15 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        /*if (eventData.pointerEnter == null || eventData.pointerEnter.transform.parent != canvas.transform)
-        {
-            // Объект не был отпущен на сцене
-            // Выполните нужные действия, например, удалите объект или верните его на исходную позицию
-            rectTransform.anchoredPosition = Vector2.zero;
-        }
-        else
-        {
-            // Объект был отпущен на сцене
-            // Создайте или переместите объект на нужные координаты на сцене
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-            worldPosition.z = 0f;
-            // Создайте или переместите объект на worldPosition
-            Instantiate(_elementPrefab, worldPosition, Quaternion.identity);
-        }*/
-
-        /*Vector3 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-        worldPosition.z = 12f;
-        // Создайте или переместите объект на worldPosition
-        Instantiate(_elementPrefab, worldPosition, Quaternion.identity);*/
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit))
         {
             if (hit.collider.gameObject.layer == 8)
             {
-                Debug.Log(hit.collider.name);
+                SpawnElement(hit.collider.transform.position);
+                gameObject.SetActive(false);
             }
             else
             {
@@ -62,5 +43,11 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
         {
             rectTransform.anchoredPosition = Vector2.zero;
         }
+    }
+
+    private void SpawnElement(Vector3 position)
+    {
+        var elementObject = Instantiate(_elementPrefab.gameObject, position + _elementPrefab.SpawnOffset, Quaternion.identity);
+        elementObject.transform.parent = _elementParent.transform;
     }
 }
