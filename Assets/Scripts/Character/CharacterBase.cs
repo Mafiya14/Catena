@@ -4,6 +4,7 @@ using System;
 public abstract class CharacterBase : MonoBehaviour
 {
     public static event Action OnGameFailed;
+    public static event Action OnFinishReached;
 
     [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] protected float distanceThreshold = 0.1f;
@@ -57,21 +58,24 @@ public abstract class CharacterBase : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.layer == (int)Layers.Pipe)
         {
-            _startCountdown = false;
-            _time = 0f;
-            Debug.Log("Entering new pipe");
+            ResetCountdown();
+        }
+
+        if (other.gameObject.layer == (int)Layers.Finish)
+        {
+            ResetCountdown();
+            WinGame();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.layer == (int)Layers.Pipe)
         {
             _startCountdown = true;
             _time = 0f;
-            Debug.Log("Exiting pipe");
         }
     }
 
@@ -86,9 +90,21 @@ public abstract class CharacterBase : MonoBehaviour
 
     private void FailGame()
     {
-        _time = 0f;
-        _startCountdown = false;
+        ResetCountdown();
         _canMove = false;
         OnGameFailed?.Invoke();
+    }
+
+    private void WinGame()
+    {
+        ResetCountdown();
+        _canMove = false;
+        OnFinishReached?.Invoke();
+    }
+
+    private void ResetCountdown()
+    {
+        _time = 0f;
+        _startCountdown = false;
     }
 }

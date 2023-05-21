@@ -9,7 +9,8 @@ public class LevelUI : MonoBehaviour
 
     [SerializeField] private Button _startButton;
     [SerializeField] private Button _restartButton;
-    [SerializeField] private GameObject _gameFailedPanel;
+    [SerializeField] private RestartGamePanel _restartGamePanel;
+    [SerializeField] private VictoryPanel _victoryPanel;
     [SerializeField] private GameObject _inventoryPanel;
 
     private void Start()
@@ -21,12 +22,14 @@ public class LevelUI : MonoBehaviour
     private void OnEnable()
     {
         CharacterBase.OnGameFailed += ShowGameFailedPanel;
+        CharacterBase.OnFinishReached += ShowVictoryPanel;
         GameStateController.OnTestingStateEntered += ClosePreparationUI;
     }
 
     private void OnDisable()
     {
         CharacterBase.OnGameFailed -= ShowGameFailedPanel;
+        CharacterBase.OnFinishReached -= ShowVictoryPanel;
         GameStateController.OnTestingStateEntered -= ClosePreparationUI;
     }
 
@@ -42,7 +45,14 @@ public class LevelUI : MonoBehaviour
 
     private void ShowGameFailedPanel()
     {
-        _gameFailedPanel.SetActive(true);
+        _restartGamePanel.gameObject.SetActive(true);
+        _startButton.gameObject.SetActive(false);
+        _restartButton.gameObject.SetActive(false);
+    }
+
+    private void ShowVictoryPanel()
+    {
+        _victoryPanel.gameObject.SetActive(true);
         _startButton.gameObject.SetActive(false);
         _restartButton.gameObject.SetActive(false);
     }
