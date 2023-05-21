@@ -645,6 +645,7 @@ MonoBehaviour:
   _startButton: {fileID: 1807398389}
   _restartButton: {fileID: 1851044289}
   _gameFailedPanel: {fileID: 1000337013}
+  _inventoryPanel: {fileID: 1611552525}
 --- !u!1 &918953150
 GameObject:
   m_ObjectHideFlags: 0

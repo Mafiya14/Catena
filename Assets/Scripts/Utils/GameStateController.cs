@@ -1,15 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStateController : MonoBehaviour
 {
+    public static event Action OnTestingStateEntered;
+
     public enum States
     {
         Preparation,
         Testing
     }
-
-    public static GameStateController Instance;
 
     public States CurrentState { get; private set; }
 
@@ -19,11 +20,6 @@ public class GameStateController : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-
         LevelStartup();
     }
 
@@ -52,22 +48,11 @@ public class GameStateController : MonoBehaviour
         CurrentState = States.Testing;
         _characterPrefab.gameObject.SetActive(true);
         _characterPrefab.Init();
+        OnTestingStateEntered?.Invoke();
     }
 
     private void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void ChangeState()
-    {
-        if (CurrentState == States.Preparation)
-        {
-            CurrentState = States.Testing;
-        }
-        else
-        {
-            CurrentState = States.Testing;
-        }
     }
 }
