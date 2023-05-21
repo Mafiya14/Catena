@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField] private Element _elementPrefab;
     [SerializeField] private GameObject _elementParent;
@@ -20,6 +20,7 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
     private Canvas _canvas;
     private CanvasGroup _canvasGroup;
     private Vector2 _startPosition;
+    private Transform _parentTransform;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
         _canvas = GetComponentInParent<Canvas>();
         _canvasGroup = GetComponent<CanvasGroup>();
         _startPosition = _rectTransform.anchoredPosition;
+        _parentTransform = transform.parent;
 
         SetItemInfo();
     }
@@ -35,6 +37,12 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         _image.sprite = _elementPrefab.Image;
         _name.text = _elementPrefab.Name;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        _startPosition = _rectTransform.position;
+        transform.SetParent(_parentTransform.parent);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -67,6 +75,7 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
         }
 
         _canvasGroup.alpha = 1;
+        transform.SetParent(_parentTransform);
     }
 
     private void SpawnElement(Vector3 position, float yRotation)

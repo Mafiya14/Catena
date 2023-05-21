@@ -6,7 +6,8 @@ public abstract class CharacterBase : MonoBehaviour
     public static event Action OnGameFailed;
     public static event Action OnFinishReached;
 
-    [SerializeField] protected float moveSpeed = 5f;
+    [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private float _moveSpeedAfterFail = 3f;
     [SerializeField] protected float distanceThreshold = 0.1f;
     [SerializeField] private float _maximumTimeWithoutColliders;
 
@@ -17,6 +18,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     private bool _startCountdown;
     private float _time = 0;
+    private float _currentSpeed;
     private bool _canMove;
 
     public void Init()
@@ -24,6 +26,7 @@ public abstract class CharacterBase : MonoBehaviour
         Path = FindObjectOfType<WaypointPath>();
         Rigidbody = GetComponent<Rigidbody>();
         _canMove = true;
+        _currentSpeed = _moveSpeed;
         GetNextWaypoint();
     }
 
@@ -42,7 +45,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     public virtual void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, CurrentWaypoint.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, CurrentWaypoint.position, _currentSpeed * Time.deltaTime);
         if (Vector3.Distance(transform.position, CurrentWaypoint.position) < distanceThreshold)
         {
             GetNextWaypoint();
@@ -93,7 +96,7 @@ public abstract class CharacterBase : MonoBehaviour
     protected virtual void FailGame()
     {
         ResetCountdown();
-        _canMove = false;
+        _currentSpeed = _moveSpeedAfterFail;
         OnGameFailed?.Invoke();
     }
 
