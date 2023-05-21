@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class PipeSection : Element
 {
-    
+    public override void Visit(CharacterBase character)
+    {
+        
+    }
 }

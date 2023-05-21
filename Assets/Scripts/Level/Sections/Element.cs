@@ -16,4 +16,6 @@ public abstract class Element : MonoBehaviour
 
     public Sprite Image => _image;
     public string Name => _name;
+
+    public virtual void Visit(CharacterBase character) { }
 }

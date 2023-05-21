@@ -8,6 +8,7 @@ public class PipeWithDamper : PipeSection
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _raisedPosition;
     [SerializeField] private Transform _damper;
+    [SerializeField] private BoxCollider _damperCollider;
 
     private float _loweredPosition;
     private bool _damperIsRaised;
@@ -48,5 +49,13 @@ public class PipeWithDamper : PipeSection
         }
 
         _isMoving = false;
+    }
+
+    public override void Visit(CharacterBase character)
+    {
+        if (!_damperIsRaised)
+        {
+            _damperCollider.enabled = true;
+        }
     }
 }

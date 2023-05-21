@@ -66,6 +66,15 @@ public abstract class CharacterBase : MonoBehaviour
         if (other.gameObject.layer == (int)Layers.Pipe)
         {
             ResetCountdown();
+            if (other.gameObject.TryGetComponent(out Element element)) 
+            {
+                element.Visit(this);
+            }
+        }
+
+        if (other.gameObject.layer == (int)Layers.Damper)
+        {
+            _currentSpeed = 0f;
         }
 
         if (other.gameObject.layer == (int)Layers.Finish)
