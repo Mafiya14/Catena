@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: flex-end;">
+        <ui:IMGUIContainer style="background-image: url(&apos;project://database/Assets/Sprites/Backgrounds/background.jpg?fileID=2800000&amp;guid=94d843405ca751540b099b7c557c81eb&amp;type=3#background&apos;); flex-grow: 1; -unity-background-scale-mode: stretch-to-fill; justify-content: flex-end;">
+            <ui:Label text="Цепная мозаика" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Fonts/AdigianaUltra.ttf?fileID=12800000&amp;guid=667d64dfda72eef459dda157332878ce&amp;type=3#AdigianaUltra&apos;); font-size: 60px; -unity-font-style: normal;" />
+            <ui:VisualElement name="container" style="justify-content: space-around; flex-direction: column; align-items: center; flex-basis: 30px; padding-left: 15%; padding-right: 15%;">
+                <ui:Button text="Button" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+        </ui:IMGUIContainer>
+    </ui:VisualElement>
+</ui:UXML>
