@@ -29,9 +29,10 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject.layer == 8)
+            if (hit.transform.gameObject.TryGetComponent(out Container container))
             {
-                SpawnElement(hit.collider.transform.position);
+                SpawnElement(hit.collider.transform.position, container.Rotation.y);
+                hit.transform.gameObject.SetActive(false);
                 gameObject.SetActive(false);
             }
             else
@@ -45,9 +46,11 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
         }
     }
 
-    private void SpawnElement(Vector3 position)
+    private void SpawnElement(Vector3 position, float yRotation)
     {
+        Vector3 rotation = new(_elementPrefab.Rotation.x, yRotation, _elementPrefab.Rotation.z);
         var elementObject = Instantiate(_elementPrefab.gameObject, position + _elementPrefab.SpawnOffset, Quaternion.identity);
+        elementObject.transform.Rotate(rotation, Space.World);
         elementObject.transform.parent = _elementParent.transform;
     }
 }
