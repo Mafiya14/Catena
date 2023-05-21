@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +9,26 @@ public class WaypointPath : MonoBehaviour
 
     public List<GameObject> Waypoints => _waypoints;
 
+    private List<Container> _containers = new();
+
     public void Init()
     {
         if (_calculatePathAutomatically)
         {
             CalculatePath();
         }
+
+        _containers.AddRange(FindObjectsOfType<Container>());
+    }
+
+    private void OnEnable()
+    {
+        LevelUI.OnStartButtonClicked += HideAllContainers;
+    }
+
+    private void OnDisable()
+    {
+        LevelUI.OnStartButtonClicked -= HideAllContainers;
     }
 
     private void CalculatePath()
@@ -22,9 +37,12 @@ public class WaypointPath : MonoBehaviour
         _waypoints.AddRange(GameObject.FindGameObjectsWithTag(waypointTagName));
     }
 
-    public Transform GetNextWaypoint(int waypointId)
+    private void HideAllContainers()
     {
-        return _waypoints[waypointId + 1].transform;
+        foreach (var container in _containers)
+        {
+            container.gameObject.SetActive(false);
+        }
     }
 
     private void OnDrawGizmos()
@@ -40,5 +58,10 @@ public class WaypointPath : MonoBehaviour
         {
             Gizmos.DrawLine(_waypoints[i].transform.position, _waypoints[i + 1].transform.position);
         }
+    }
+
+    public Transform GetNextWaypoint(int waypointId)
+    {
+        return _waypoints[waypointId + 1].transform;
     }
 }

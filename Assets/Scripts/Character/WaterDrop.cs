@@ -1,8 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterDrop : CharacterBase
 {
-    
+    protected override void FailGame()
+    {
+        base.FailGame();
+        Rigidbody.isKinematic = false;
+    }
 }

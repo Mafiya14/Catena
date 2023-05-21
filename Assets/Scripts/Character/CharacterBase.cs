@@ -12,6 +12,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     public WaypointPath Path { get; private set; }
     public Transform CurrentWaypoint { get; private set; }
+    public Rigidbody Rigidbody { get; private set; }
     public int CurrentWaypointId { get; private set; } = -1;
 
     private bool _startCountdown;
@@ -21,6 +22,7 @@ public abstract class CharacterBase : MonoBehaviour
     public void Init()
     {
         Path = FindObjectOfType<WaypointPath>();
+        Rigidbody = GetComponent<Rigidbody>();
         _canMove = true;
         GetNextWaypoint();
     }
@@ -88,7 +90,7 @@ public abstract class CharacterBase : MonoBehaviour
         }
     }
 
-    private void FailGame()
+    protected virtual void FailGame()
     {
         ResetCountdown();
         _canMove = false;

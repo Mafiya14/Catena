@@ -129,4 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   distanceThreshold: 0.1
-  _maximumTimeWithoutColliders: 0.35
+  _maximumTimeWithoutColliders: 0.25

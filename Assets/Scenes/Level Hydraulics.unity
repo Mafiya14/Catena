@@ -988,6 +988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: example floor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d5ba81559091e29499462e19d733f6a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5ba81559091e29499462e19d733f6a6, type: 3}
 --- !u!4 &927741916 stripped
@@ -1225,7 +1229,7 @@ PrefabInstance:
     - target: {fileID: 1853417235529612285, guid: 9bb4f35c179528c48b6c630da815fd47, type: 3}
       propertyPath: _elementPrefab
       value: 
-      objectReference: {fileID: 73170548721898923, guid: fd5fe477cc7a04d4aa7f4c3a900d7cff, type: 3}
+      objectReference: {fileID: 4739285333333310871, guid: 24c4e47c86fc9af4e803c64f722b9e52, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bb4f35c179528c48b6c630da815fd47, type: 3}
 --- !u!224 &1070941192 stripped
@@ -2489,6 +2493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: table
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88d4e19ac4cff1d4688fa162166ec466, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88d4e19ac4cff1d4688fa162166ec466, type: 3}
 --- !u!4 &1690620571 stripped
@@ -3417,6 +3425,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1438880278299517618, guid: 6e7fd9f3a60953d4c914092fe2a29ce3, type: 3}
+      propertyPath: _maximumTimeWithoutColliders
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1438880278299517624, guid: 6e7fd9f3a60953d4c914092fe2a29ce3, type: 3}
       propertyPath: m_Name
       value: Water Drop
