@@ -1,7 +1,10 @@
 using UnityEngine;
+using System;
 
 public abstract class CharacterBase : MonoBehaviour
 {
+    public static event Action OnGameFailed;
+
     [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] protected float distanceThreshold = 0.1f;
     [SerializeField] private float _maximumTimeWithoutColliders;
@@ -77,9 +80,15 @@ public abstract class CharacterBase : MonoBehaviour
         _time += Time.deltaTime;
         if (_time > _maximumTimeWithoutColliders)
         {
-            _time = 0f;
-            _startCountdown = false;
-            Debug.Log("fail");
+            FailGame();
         }
+    }
+
+    private void FailGame()
+    {
+        _time = 0f;
+        _startCountdown = false;
+        _canMove = false;
+        OnGameFailed?.Invoke();
     }
 }
