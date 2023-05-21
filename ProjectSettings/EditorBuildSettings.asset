@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start Scene.unity
+    guid: b6ef52fe5e7b88e44a16d205d594a697
+  - enabled: 1
+    path: Assets/Scenes/ElectricitiesLevels.unity
+    guid: f0c4893ec20164348a901d6b43dddc1d
+  - enabled: 1
+    path: Assets/Scenes/HydraulicsLevels.unity
+    guid: 5cdfe6835c75dc04b976476035b08add
   m_configObjects: {}
