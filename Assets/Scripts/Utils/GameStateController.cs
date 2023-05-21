@@ -6,6 +6,8 @@ public class GameStateController : MonoBehaviour
 {
     public static event Action OnTestingStateEntered;
 
+    public static GameStateController Instance;
+
     public enum States
     {
         Preparation,
@@ -20,6 +22,11 @@ public class GameStateController : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         LevelStartup();
     }
 

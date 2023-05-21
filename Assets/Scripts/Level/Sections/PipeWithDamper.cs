@@ -20,7 +20,7 @@ public class PipeWithDamper : PipeSection
 
     private void OnMouseUp()
     {
-        if (_isMoving)
+        if (_isMoving || GameStateController.Instance.CurrentState == GameStateController.States.Testing)
             return;
 
         if (_damperIsRaised)
