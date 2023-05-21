@@ -1,25 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Element _elementPrefab;
     [SerializeField] private GameObject _elementParent;
 
-    private RectTransform rectTransform;
-    private Canvas canvas;
+    [Header("UI")]
+    [Range(0f, 1f)]
+    [SerializeField] private float _alphaDragValue;
+    [SerializeField] private Image _image;
+    [SerializeField] private TextMeshProUGUI _name;
+
+    private RectTransform _rectTransform;
+    private Canvas _canvas;
+    private CanvasGroup _canvasGroup;
+    private Vector2 _startPosition;
 
     private void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
-        canvas = GetComponentInParent<Canvas>();
+        _rectTransform = GetComponent<RectTransform>();
+        _canvas = GetComponentInParent<Canvas>();
+        _canvasGroup = GetComponent<CanvasGroup>();
+        _startPosition = _rectTransform.anchoredPosition;
+
+        SetItemInfo();
+    }
+
+    private void SetItemInfo()
+    {
+        _image.sprite = _elementPrefab.Image;
+        _name.text = _elementPrefab.Name;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+        _canvasGroup.alpha = _alphaDragValue;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -37,13 +58,15 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
             }
             else
             {
-                rectTransform.anchoredPosition = Vector2.zero;
+                _rectTransform.anchoredPosition = _startPosition;
             }
         }
         else
         {
-            rectTransform.anchoredPosition = Vector2.zero;
+            _rectTransform.anchoredPosition = _startPosition;
         }
+
+        _canvasGroup.alpha = 1;
     }
 
     private void SpawnElement(Vector3 position, float yRotation)

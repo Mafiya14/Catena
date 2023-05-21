@@ -113,3 +113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnOffset: {x: 0, y: 0.9, z: 0}
   _rotation: {x: 0, y: 0, z: 90}
+  _image: {fileID: 21300000, guid: 5e94ecfebd7680f47b2f74e028b6ed26, type: 3}
+  _name: "\u0423\u0447\u0430\u0441\u0442\u043E\u043A \u0442\u0440\u0443\u0431\u044B"
