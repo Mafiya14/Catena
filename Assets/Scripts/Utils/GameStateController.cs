@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateController : MonoBehaviour
 {
@@ -29,11 +30,13 @@ public class GameStateController : MonoBehaviour
     private void OnEnable()
     {
         LevelUI.OnStartButtonClicked += StartGame;
+        LevelUI.OnRestartButtonClicked += RestartGame;
     }
 
     private void OnDisable()
     {
         LevelUI.OnStartButtonClicked -= StartGame;
+        LevelUI.OnRestartButtonClicked -= RestartGame;
     }
 
     private void LevelStartup()
@@ -49,6 +52,11 @@ public class GameStateController : MonoBehaviour
         CurrentState = States.Testing;
         _characterPrefab.gameObject.SetActive(true);
         _characterPrefab.Init();
+    }
+
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ChangeState()
