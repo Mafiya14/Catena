@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class LevelStartup : MonoBehaviour
 {
+    [SerializeField] private GameStateController _gameStateController;
     [SerializeField] private CharacterBase _characterPrefab;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private WaypointPath _waypointPath;

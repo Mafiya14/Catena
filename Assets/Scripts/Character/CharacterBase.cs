@@ -12,15 +12,20 @@ public abstract class CharacterBase : MonoBehaviour
 
     private bool _startCountdown;
     private float _time = 0;
+    private bool _canMove;
 
     public void Init()
     {
         Path = FindObjectOfType<WaypointPath>();
+        _canMove = true;
         GetNextWaypoint();
     }
 
     private void Update()
     {
+        if (!_canMove)
+            return;
+
         Move();
 
         if (_startCountdown)
