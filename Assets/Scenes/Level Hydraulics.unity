@@ -1468,6 +1468,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1150553809607306689, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1150553809700701174, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
       propertyPath: m_Name
       value: LevelUICanvas
@@ -1554,6 +1558,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1150553809700701178, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150553809848379572, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1150553810407143939, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
