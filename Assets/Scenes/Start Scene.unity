@@ -3619,8 +3619,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0426\u0435\u043F\u043D\u0430\u044F \u043C\u043E\u0437\u0430\u0438\u043A\u0430"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ead1359f79532254f90332362e0cee5d, type: 2}
-  m_sharedMaterial: {fileID: -6085063055771721605, guid: ead1359f79532254f90332362e0cee5d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c58e435a6e3dfd440b336104f9ab5fc3, type: 2}
+  m_sharedMaterial: {fileID: -2377548963828563270, guid: c58e435a6e3dfd440b336104f9ab5fc3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
