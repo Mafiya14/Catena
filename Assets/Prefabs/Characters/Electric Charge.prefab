@@ -223,6 +223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _moveSpeedAfterFail: 3
+  _moveSpeedAfterFail: 0
   distanceThreshold: 0.1
   _maximumTimeWithoutColliders: 0.35
