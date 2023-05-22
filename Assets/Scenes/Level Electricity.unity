@@ -1874,7 +1874,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5612696168370401842, guid: 19c89dae3e2ba1448adc27f4fb4a77a9, type: 3}
       propertyPath: _moveSpeed
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612696168370401842, guid: 19c89dae3e2ba1448adc27f4fb4a77a9, type: 3}
+      propertyPath: _maximumTimeWithoutColliders
+      value: 0.175
       objectReference: {fileID: 0}
     - target: {fileID: 6778938408043696257, guid: 19c89dae3e2ba1448adc27f4fb4a77a9, type: 3}
       propertyPath: m_RootOrder
@@ -2005,6 +2009,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1520779849}
     m_Modifications:
+    - target: {fileID: 5314380068715819359, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
+      propertyPath: _rotationAngle
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314380068715819359, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
+      propertyPath: _rotationSpeed
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8132503114339339305, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
       propertyPath: m_RootOrder
       value: 13
