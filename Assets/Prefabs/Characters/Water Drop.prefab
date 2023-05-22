@@ -130,4 +130,4 @@ MonoBehaviour:
   _moveSpeed: 10
   _moveSpeedAfterFail: 3
   distanceThreshold: 0.1
-  _maximumTimeWithoutColliders: 0.125
+  _maximumTimeWithoutColliders: 0.1

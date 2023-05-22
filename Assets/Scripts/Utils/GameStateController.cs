@@ -34,12 +34,14 @@ public class GameStateController : MonoBehaviour
     {
         LevelUI.OnStartButtonClicked += StartGame;
         LevelUI.OnRestartButtonClicked += RestartGame;
+        RotatingElement.OnStartAnimationPlayed += SpawnPlayer;
     }
 
     private void OnDisable()
     {
         LevelUI.OnStartButtonClicked -= StartGame;
         LevelUI.OnRestartButtonClicked -= RestartGame;
+        RotatingElement.OnStartAnimationPlayed -= SpawnPlayer;
     }
 
     private void LevelStartup()
@@ -53,9 +55,13 @@ public class GameStateController : MonoBehaviour
     private void StartGame()
     {
         CurrentState = States.Testing;
+        OnTestingStateEntered?.Invoke();
+    }
+
+    private void SpawnPlayer()
+    {
         _characterPrefab.gameObject.SetActive(true);
         _characterPrefab.Init();
-        OnTestingStateEntered?.Invoke();
     }
 
     private void RestartGame()

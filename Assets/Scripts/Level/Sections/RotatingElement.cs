@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
 public class RotatingElement : MonoBehaviour
 {
+    public static event Action OnStartAnimationPlayed;
+
     private enum RotationAxis
     {
         X,
@@ -64,5 +67,6 @@ public class RotatingElement : MonoBehaviour
         }
 
         _objectToRotate.transform.rotation = _targetRotation;
+        OnStartAnimationPlayed?.Invoke();
     }
 }
