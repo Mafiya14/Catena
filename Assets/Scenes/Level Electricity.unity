@@ -2010,13 +2010,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1520779849}
     m_Modifications:
     - target: {fileID: 5314380068715819359, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
+      propertyPath: _rotationAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314380068715819359, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
       propertyPath: _rotationAngle
-      value: -40
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 5314380068715819359, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
       propertyPath: _rotationSpeed
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 5314380068715819359, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
+      propertyPath: _objectToRotate
+      value: 
+      objectReference: {fileID: 8599285954017515756}
     - target: {fileID: 8132503114339339305, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2067,3 +2075,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
+--- !u!4 &8599285954017515756 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5159693040830024454, guid: 296121b8bf3e6f74fab3348f15c60584, type: 3}
+  m_PrefabInstance: {fileID: 8599285954017515755}
+  m_PrefabAsset: {fileID: 0}
