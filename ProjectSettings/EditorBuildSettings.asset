@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1_Electricity.unity
     guid: 0203194e39fc22c4c88c33c8106c39d6
+  - enabled: 1
+    path: Assets/Scenes/Level2_Electricity.unity
+    guid: 8d035f7c9ac4ba54b879c0c03ef12cd6
   m_configObjects: {}

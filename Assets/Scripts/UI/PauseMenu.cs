@@ -16,8 +16,16 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        _continueButton.onClick.AddListener(() => gameObject.SetActive(false));
-        _quitButton.onClick.AddListener(() => SceneManager.LoadScene(_startSceneIndex));
+        _continueButton.onClick.AddListener(() =>
+        {
+            EventBus.OnAnyButtonClicked?.Invoke();
+            gameObject.SetActive(false);
+        });
+        _quitButton.onClick.AddListener(() =>
+        {
+            EventBus.OnAnyButtonClicked?.Invoke();
+            SceneManager.LoadScene(_startSceneIndex);
+        });
     }
 
     private void OnDisable()

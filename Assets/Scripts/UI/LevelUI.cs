@@ -43,21 +43,25 @@ public class LevelUI : MonoBehaviour
 
     private void ClickStartButton()
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         OnStartButtonClicked?.Invoke();
     }
 
     private void ClickRestartButton()
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         OnRestartButtonClicked?.Invoke();
     }
 
     private void ClickInfoButton()
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         _infoPanel.SetActive(!_infoPanel.activeInHierarchy);
     }
 
     private void ClickPauseButton()
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         _pausePanel.SetActive(!_pausePanel.activeInHierarchy);
     }
 

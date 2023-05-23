@@ -33,6 +33,7 @@ public class DialogueUI : MonoBehaviour
 
     private void ContinueStory()
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         if (_currentStory.canContinue)
         {
             _speech.text = _currentStory.Continue();

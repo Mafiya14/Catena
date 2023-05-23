@@ -15,6 +15,7 @@ public class ElectricitiesLevels : MonoBehaviour
 
     private void LoadScene(int scene)
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         SceneManager.LoadScene(scene);
     }
 

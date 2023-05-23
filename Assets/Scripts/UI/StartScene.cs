@@ -17,11 +17,13 @@ public class StartScene : MonoBehaviour
    
     private void LoadScene(int scene)
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         SceneManager.LoadScene(scene);
     }
 
     private void OpenMenu()
     {
+        EventBus.OnAnyButtonClicked?.Invoke();
         _levels.SetActive(true);
     }
 
