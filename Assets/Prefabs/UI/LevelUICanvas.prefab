@@ -123,6 +123,8 @@ MonoBehaviour:
   _restartGamePanel: {fileID: 1150553809848379576}
   _victoryPanel: {fileID: 1150553809607306693}
   _inventoryPanel: {fileID: 1150553810493346252}
+  _infoButton: {fileID: 3307739392426419069}
+  _infoPanel: {fileID: 8970143621262262013}
 --- !u!1 &1150553810015646592
 GameObject:
   m_ObjectHideFlags: 0

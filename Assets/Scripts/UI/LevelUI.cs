@@ -12,11 +12,15 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private RestartGamePanel _restartGamePanel;
     [SerializeField] private VictoryPanel _victoryPanel;
     [SerializeField] private GameObject _inventoryPanel;
+    [Header("Info")]
+    [SerializeField] private Button _infoButton;
+    [SerializeField] private GameObject _infoPanel;
 
     private void Start()
     {
         _startButton.onClick.AddListener(ClickStartButton);
         _restartButton.onClick.AddListener(ClickRestartButton);
+        _infoButton.onClick.AddListener(ClickInfoButton);
     }
 
     private void OnEnable()
@@ -41,6 +45,11 @@ public class LevelUI : MonoBehaviour
     private void ClickRestartButton()
     {
         OnRestartButtonClicked?.Invoke();
+    }
+
+    private void ClickInfoButton()
+    {
+        _infoPanel.SetActive(!_infoPanel.activeInHierarchy);
     }
 
     private void ShowGameFailedPanel()
