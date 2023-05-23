@@ -1468,6 +1468,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1150553809607306693, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: _nextSceneId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1150553809700701174, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
       propertyPath: m_Name
       value: LevelUICanvas
