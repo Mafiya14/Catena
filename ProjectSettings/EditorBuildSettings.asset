@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1_Hydraulics.unity
     guid: e9833b31cfcc772469262c0bfe3a8328
+  - enabled: 1
+    path: Assets/Scenes/Level2_Hydraulics.unity
+    guid: 716052e1f7cb074438c798acba3b7753
   m_configObjects: {}
