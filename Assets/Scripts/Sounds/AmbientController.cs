@@ -12,7 +12,7 @@ public class AmbientController : MonoBehaviour
         {
             Instance = this;
         }
-        
+
         DontDestroyOnLoad(gameObject);
     }
 }
