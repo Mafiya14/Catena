@@ -5,7 +5,6 @@ using UnityEngine;
 public class WaypointPath : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _waypoints;
-    [SerializeField] private bool _calculatePathAutomatically;
 
     public List<GameObject> Waypoints => _waypoints;
 
@@ -13,11 +12,6 @@ public class WaypointPath : MonoBehaviour
 
     public void Init()
     {
-        if (_calculatePathAutomatically)
-        {
-            CalculatePath();
-        }
-
         _containers.AddRange(FindObjectsOfType<Container>());
     }
 
@@ -29,12 +23,6 @@ public class WaypointPath : MonoBehaviour
     private void OnDisable()
     {
         LevelUI.OnStartButtonClicked -= HideAllContainers;
-    }
-
-    private void CalculatePath()
-    {
-        string waypointTagName = Tags.Waypoint.ToString();
-        _waypoints.AddRange(GameObject.FindGameObjectsWithTag(waypointTagName));
     }
 
     private void HideAllContainers()
