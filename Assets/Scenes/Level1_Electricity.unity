@@ -308,6 +308,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cf347a9aed9d9541a1480f5675d3a33, type: 3}
+--- !u!1 &364768042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4633620040762956232, guid: e61239743871ac947b272abb39eb3912, type: 3}
+  m_PrefabInstance: {fileID: 4633620041132664063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471854511
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +631,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1150553809700701181, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: _pausePanel
+      value: 
+      objectReference: {fileID: 364768042}
     - target: {fileID: 1150553809848379575, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -713,6 +722,22 @@ PrefabInstance:
     - target: {fileID: 7614627418475692782, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964937763453148413, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964937763453148413, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964937763453148413, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964937763453148413, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 8213833761664030226, guid: d85bc960f60c53d49a32d1d72b1cc3a2, type: 3}
       propertyPath: m_fontColor.b
