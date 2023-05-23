@@ -12,7 +12,7 @@ public class DialogueUI : MonoBehaviour
 
     private Story _currentStory;
 
-    private void Start()
+    private void Awake()
     {
         GameStateController.OnPreparationStateEntered += StartDialogue;
 

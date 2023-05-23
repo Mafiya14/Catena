@@ -20,7 +20,6 @@ public class GameStateController : MonoBehaviour
     [SerializeField] private CharacterBase _characterPrefab;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private WaypointPath _waypointPath;
-    [SerializeField] private DialogueUI _dialogueUI;
 
     private void Awake()
     {
@@ -28,7 +27,10 @@ public class GameStateController : MonoBehaviour
         {
             Instance = this;
         }
+    }
 
+    private void Start()
+    {
         LevelStartup();
     }
 
@@ -52,8 +54,7 @@ public class GameStateController : MonoBehaviour
         
         _waypointPath.Init();
         _characterPrefab.transform.position = _spawnPoint.position;
-        /*OnPreparationStateEntered?.Invoke();*/
-        _dialogueUI.StartDialogue();
+        OnPreparationStateEntered?.Invoke();
     }
 
     private void StartGame()
